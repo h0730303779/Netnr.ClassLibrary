@@ -4,7 +4,7 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
 
-namespace EPT.Core
+namespace Netnr.Fast
 {
     /// <summary>
     /// 图片操作

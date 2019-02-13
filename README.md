@@ -12,7 +12,7 @@ Install-Package Netnr.Core
 
 ### Netnr.Core
 - CacheTo.cs　　缓存（Core需要依赖注入，并赋值 `Netnr.Core.memoryCache` 对象）
-- CalcTo.cs　　算法、加密、解密
+- CalcTo.cs　　算法、加密、解密（MD5、DES、SHA1、HMAC_SHA1）
 - ClientTo.cs　　获取客户端的一些信息（Core需要传入 `HttpContext`）
 - CmdTo.cs　　执行命令，支持Windows、Linux
 - ConsoleTo.cs　　输出日志、错误信息
@@ -20,7 +20,7 @@ Install-Package Netnr.Core
 - Extend.cs　　常用方法拓展（依赖 `Newtonsoft.Json`，JSON、实体、编码、SQL等转换）
 - FileTo.cs　　读写文件
 - HttpTo.cs　　HTTP请求（GET、POST等，可设置 `HttpWebRequest` 对象）
-- LamdaTo.cs　　动态生成lamda表达式
+- LamdaTo.cs　　动态生成 Lamda 表达式
 - MapPathTo.cs　　虚拟路径转换为物理路径
 - PinyinTo.cs　　中文转拼音（NPinyin）
 - RandomTo.cs　　生成随机码（验证码）
