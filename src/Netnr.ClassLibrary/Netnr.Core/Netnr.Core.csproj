@@ -12,6 +12,7 @@
     <PackageLicenseUrl>https://github.com/netnr/Netnr.ClassLibrary/blob/master/LICENSE</PackageLicenseUrl>
     <PackageTags>netnr</PackageTags>
     <PackageReleaseNotes>支持 .net core 与 .net framework</PackageReleaseNotes>
+    <Authors>netnr</Authors>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net40|AnyCPU'">
