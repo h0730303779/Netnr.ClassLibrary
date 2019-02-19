@@ -29,8 +29,11 @@ Install-Package Netnr.Core
 - UniqueTo.cs　　生成唯一的标识（GUID转成long）
 
 ### Netnr.Fast
+- DbSetTo.cs　　Framework拓展 `Update` `UpdateRange` 方法
 - ImageTo.cs　　图片操作（生成验证码、缩略图、水印）
 - Npoi.cs　　操作Excel（依赖 `NPOI`，Excel文件与DataTable相互转换，支持 .xls、.xlsx）
+- QueryableTo.cs　　IQueryable对象的拓展，如排序拼接
+
 
 ### 框架
 `.NETStandard 2.0`

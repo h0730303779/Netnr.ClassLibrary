@@ -14,14 +14,18 @@ namespace Netnr.Core
         }
 #else
         /// <summary>
-        /// 映射虚拟路径
+        /// 映射虚拟路径，得到的是wwwroot目录下的路径
         /// </summary>
         /// <param name="path"></param>
         /// <param name="hosting">环境变量，可选</param>
         /// <returns></returns>
-        public static string Map(string path, Microsoft.Extensions.Hosting.IHostingEnvironment hosting = null)
+        public static string Map(string path, Microsoft.AspNetCore.Hosting.IHostingEnvironment hosting = null)
         {
-            var rootPrefix = hosting == null ? hosting.ContentRootPath : AppContext.BaseDirectory;
+            var rootPrefix = AppContext.BaseDirectory;
+            if (hosting != null)
+            {
+                rootPrefix = hosting.WebRootPath;
+            }
             var rootDir = rootPrefix.Replace('\\', '/').TrimEnd('/') + '/';
             return rootDir + path.TrimStart('/');
         }

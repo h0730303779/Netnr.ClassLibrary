@@ -4,7 +4,7 @@
     <TargetFrameworks>net40;netstandard2.0</TargetFrameworks>
     <Description>开发常用的核心类库；
 使用文档看GitHub（Gitee）项目说明</Description>
-    <Copyright>1.0.0</Copyright>
+    <Copyright>netnr</Copyright>
     <PackageIconUrl>https://raw.githubusercontent.com/netnr/static/master/favicon.ico</PackageIconUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/netnr/Netnr.ClassLibrary</PackageProjectUrl>
@@ -13,6 +13,7 @@
     <PackageTags>netnr</PackageTags>
     <PackageReleaseNotes>支持 .net core 与 .net framework</PackageReleaseNotes>
     <Authors>netnr</Authors>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net40|AnyCPU'">
