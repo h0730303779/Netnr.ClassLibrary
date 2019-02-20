@@ -1,6 +1,8 @@
 # Netnr.ClassLibrary
 公共类库、常用的方法
 
+### [更新日志](CHANGELOG.md)
+
 ### 项目
 -  **Netnr.Core** 　公共核心的类库（直接使用）
 -  **Netnr.Fast** 　常用的的类库（根据自己的实际情况微调，如一些参数）
@@ -29,9 +31,11 @@ Install-Package Netnr.Core
 - UniqueTo.cs　　生成唯一的标识（GUID转成long）
 
 ### Netnr.Fast
-- DbSetTo.cs　　Framework拓展 `Update` `UpdateRange` 方法
+- DbSetTo.cs　　Framework拓展 `Update` `UpdateRange` 方法，无命名空间
+- GlobalTo.cs　　Core环境`IConfiguration` `IHostingEnvironment` 对象，`appsettings.json`配置文件
 - ImageTo.cs　　图片操作（生成验证码、缩略图、水印）
-- Npoi.cs　　操作Excel（依赖 `NPOI`，Excel文件与DataTable相互转换，支持 .xls、.xlsx）
+- NpoiTo.cs　　操作Excel（依赖 `NPOI`，Excel文件与DataTable相互转换，支持 .xls、.xlsx，Framework项目需要引入`SharpZipLib`）
+- PaginationVM.cs　　分页参数实体，无命名空间
 - QueryableTo.cs　　IQueryable对象的拓展，如排序拼接
 
 
