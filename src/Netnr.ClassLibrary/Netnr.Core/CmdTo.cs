@@ -1,5 +1,8 @@
 ﻿namespace Netnr.Core
 {
+    /// <summary>
+    /// 调用cmd
+    /// </summary>
     public class CmdTo
     {
         /// <summary>  

@@ -8,6 +8,11 @@ namespace Netnr.Core
     public class MapPathTo
     {
 #if NET40
+        /// <summary>
+        /// 虚拟路径映射物理路径
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
         public static string Map(string path)
         {
             return System.Web.HttpContext.Current.Server.MapPath(path);

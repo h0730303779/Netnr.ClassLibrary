@@ -47,6 +47,13 @@ namespace Netnr.Core
             fs.Close();
         }
 
+        /// <summary>
+        /// 写入
+        /// </summary>
+        /// <param name="content"></param>
+        /// <param name="path"></param>
+        /// <param name="fileName"></param>
+        /// <param name="isAppend"></param>
         public static void WriteText(string content, string path, string fileName, bool isAppend = true)
         {
             WriteText(content, path, fileName, Encoding.UTF8, isAppend);

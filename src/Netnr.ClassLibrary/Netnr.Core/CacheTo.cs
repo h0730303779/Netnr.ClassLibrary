@@ -4,6 +4,9 @@ using System.Web;
 
 namespace Netnr.Core
 {
+    /// <summary>
+    /// 缓存
+    /// </summary>
     public class CacheTo
     {
         /// <summary>
@@ -17,11 +20,9 @@ namespace Netnr.Core
         }
 
         /// <summary>
-        /// 
         /// 设置数据缓存
-        /// 
         /// 变化时间过期（平滑过期）。表示缓存连续2个小时没有访问就过期（TimeSpan.FromSeconds(7200)）。
-        /// 
+        /// </summary>
         /// <param name="CacheKey">键</param>
         /// <param name="objObject">值</param>
         /// <param name="Second">过期时间，默认7200秒 </param>
@@ -67,6 +68,9 @@ using System;
 
 namespace Netnr.Core
 {
+    /// <summary>
+    /// 缓存
+    /// </summary>
     public class CacheTo
     {
         /// <summary>
@@ -85,11 +89,9 @@ namespace Netnr.Core
         }
 
         /// <summary>
-        /// 
         /// 设置数据缓存
-        /// 
         /// 变化时间过期（平滑过期）。表示缓存连续2个小时没有访问就过期（TimeSpan.FromSeconds(7200)）。
-        /// 
+        /// </summary>
         /// <param name="CacheKey">键</param>
         /// <param name="objObject">值</param>
         /// <param name="Second">过期时间，默认7200秒 </param>

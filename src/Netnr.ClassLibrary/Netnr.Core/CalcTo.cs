@@ -13,7 +13,7 @@ namespace Netnr.Core
         /// 异或算法
         /// </summary>
         /// <param name="s">字符串</param>
-        /// <param name="kye">异或因子 2-253</param>
+        /// <param name="key">异或因子 2-253</param>
         /// <returns>返回异或后的字符串</returns>
         public static string XorKey(string s, int key)
         {
@@ -106,7 +106,12 @@ namespace Netnr.Core
         #endregion
 
         #region SHA1 加密
-        //20字节,160位
+
+        /// <summary>
+        /// 20字节,160位
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
         public static string SHA128(string str)
         {
             byte[] buffer = Encoding.UTF8.GetBytes(str);
@@ -115,7 +120,11 @@ namespace Netnr.Core
             return BitConverter.ToString(byteArr);
         }
 
-        //32字节,256位
+        /// <summary>
+        /// 32字节,256位
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
         public static string SHA256(string str)
         {
             byte[] buffer = Encoding.UTF8.GetBytes(str);
@@ -124,7 +133,11 @@ namespace Netnr.Core
             return BitConverter.ToString(byteArr);
         }
 
-        //48字节,384位
+        /// <summary>
+        /// 48字节,384位
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
         public static string SHA384(string str)
         {
             byte[] buffer = Encoding.UTF8.GetBytes(str);
@@ -133,7 +146,11 @@ namespace Netnr.Core
             return BitConverter.ToString(byteArr);
         }
 
-        //64字节,512位
+        /// <summary>
+        /// 64字节,512位
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
         public static string SHA512(string str)
         {
             byte[] buffer = Encoding.UTF8.GetBytes(str);

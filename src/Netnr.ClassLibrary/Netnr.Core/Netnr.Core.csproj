@@ -13,7 +13,8 @@
     <PackageTags>netnr</PackageTags>
     <PackageReleaseNotes>支持 .net core 与 .net framework</PackageReleaseNotes>
     <Authors>netnr</Authors>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
+    <DocumentationFile>H:\ROOM\Netnr.ClassLibrary\src\Netnr.ClassLibrary\Netnr.Core\Netnr.Core.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net40|AnyCPU'">

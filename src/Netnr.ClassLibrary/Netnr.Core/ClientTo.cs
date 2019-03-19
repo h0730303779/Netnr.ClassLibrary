@@ -7,9 +7,15 @@ using System.Net;
 
 namespace Netnr.Core
 {
+    /// <summary>
+    /// 客户端信息
+    /// </summary>
     public class ClientTo
     {
 #if NET40
+        /// <summary>
+        /// 构造
+        /// </summary>
         public ClientTo()
         {
             var Request = System.Web.HttpContext.Current.Request;
@@ -22,6 +28,10 @@ namespace Netnr.Core
             UserAgentGet(ua);
         }
 #else
+        /// <summary>
+        /// 构造
+        /// </summary>
+        /// <param name="content"></param>
         public ClientTo(HttpContext content)
         {
             var header = content.Request.HttpContext.Request.Headers;

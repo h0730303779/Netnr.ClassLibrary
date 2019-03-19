@@ -24,7 +24,13 @@ namespace Netnr.Core
         }
 
         #region RSA的加密函数 
-        //RSA的加密函数  string
+
+        /// <summary>
+        /// RSA的加密函数  string
+        /// </summary>
+        /// <param name="xmlPublicKey"></param>
+        /// <param name="m_strEncryptString"></param>
+        /// <returns></returns>
         public string RSAEncrypt(string xmlPublicKey, string m_strEncryptString)
         {
 
@@ -39,7 +45,13 @@ namespace Netnr.Core
             return Result;
 
         }
-        //RSA的加密函数 byte[]
+
+        /// <summary>
+        /// RSA的加密函数 byte[]
+        /// </summary>
+        /// <param name="xmlPublicKey"></param>
+        /// <param name="EncryptString"></param>
+        /// <returns></returns>
         public string RSAEncrypt(string xmlPublicKey, byte[] EncryptString)
         {
 
@@ -55,7 +67,13 @@ namespace Netnr.Core
         #endregion
 
         #region RSA的解密函数 
-        //RSA的解密函数  string
+
+        /// <summary>
+        /// RSA的解密函数  string
+        /// </summary>
+        /// <param name="xmlPrivateKey"></param>
+        /// <param name="m_strDecryptString"></param>
+        /// <returns></returns>
         public string RSADecrypt(string xmlPrivateKey, string m_strDecryptString)
         {
             byte[] PlainTextBArray;
@@ -70,7 +88,12 @@ namespace Netnr.Core
 
         }
 
-        //RSA的解密函数  byte
+        /// <summary>
+        /// RSA的解密函数  byte
+        /// </summary>
+        /// <param name="xmlPrivateKey"></param>
+        /// <param name="DecryptString"></param>
+        /// <returns></returns>
         public string RSADecrypt(string xmlPrivateKey, byte[] DecryptString)
         {
             byte[] DypherTextBArray;
@@ -88,7 +111,13 @@ namespace Netnr.Core
 
         #region RSA数字签名 
         #region 获取Hash描述表 
-        //获取Hash描述表 
+
+        /// <summary>
+        /// 获取Hash描述表 
+        /// </summary>
+        /// <param name="m_strSource"></param>
+        /// <param name="HashData"></param>
+        /// <returns></returns>
         public bool GetHash(string m_strSource, ref byte[] HashData)
         {
             //从字符串中取得Hash描述 
@@ -100,7 +129,12 @@ namespace Netnr.Core
             return true;
         }
 
-        //获取Hash描述表 
+        /// <summary>
+        /// 获取Hash描述表 
+        /// </summary>
+        /// <param name="m_strSource"></param>
+        /// <param name="strHashData"></param>
+        /// <returns></returns>
         public bool GetHash(string m_strSource, ref string strHashData)
         {
 
@@ -116,7 +150,12 @@ namespace Netnr.Core
 
         }
 
-        //获取Hash描述表 
+        /// <summary>
+        /// 获取Hash描述表 
+        /// </summary>
+        /// <param name="objFile"></param>
+        /// <param name="HashData"></param>
+        /// <returns></returns>
         public bool GetHash(System.IO.FileStream objFile, ref byte[] HashData)
         {
 
@@ -129,7 +168,12 @@ namespace Netnr.Core
 
         }
 
-        //获取Hash描述表 
+        /// <summary>
+        /// 获取Hash描述表
+        /// </summary>
+        /// <param name="objFile"></param>
+        /// <param name="strHashData"></param>
+        /// <returns></returns>
         public bool GetHash(System.IO.FileStream objFile, ref string strHashData)
         {
 
@@ -147,7 +191,13 @@ namespace Netnr.Core
         #endregion
 
         #region RSA签名 
-        //RSA签名 
+        /// <summary>
+        /// RSA签名
+        /// </summary>
+        /// <param name="p_strKeyPrivate"></param>
+        /// <param name="HashbyteSignature"></param>
+        /// <param name="EncryptedSignatureData"></param>
+        /// <returns></returns>
         public bool SignatureFormatter(string p_strKeyPrivate, byte[] HashbyteSignature, ref byte[] EncryptedSignatureData)
         {
 
@@ -164,7 +214,13 @@ namespace Netnr.Core
 
         }
 
-        //RSA签名 
+        /// <summary>
+        /// RSA签名
+        /// </summary>
+        /// <param name="p_strKeyPrivate"></param>
+        /// <param name="HashbyteSignature"></param>
+        /// <param name="m_strEncryptedSignatureData"></param>
+        /// <returns></returns>
         public bool SignatureFormatter(string p_strKeyPrivate, byte[] HashbyteSignature, ref string m_strEncryptedSignatureData)
         {
 
@@ -185,7 +241,13 @@ namespace Netnr.Core
 
         }
 
-        //RSA签名 
+        /// <summary>
+        /// RSA签名
+        /// </summary>
+        /// <param name="p_strKeyPrivate"></param>
+        /// <param name="m_strHashbyteSignature"></param>
+        /// <param name="EncryptedSignatureData"></param>
+        /// <returns></returns>
         public bool SignatureFormatter(string p_strKeyPrivate, string m_strHashbyteSignature, ref byte[] EncryptedSignatureData)
         {
 
@@ -205,7 +267,13 @@ namespace Netnr.Core
 
         }
 
-        //RSA签名 
+        /// <summary>
+        /// RSA签名
+        /// </summary>
+        /// <param name="p_strKeyPrivate"></param>
+        /// <param name="m_strHashbyteSignature"></param>
+        /// <param name="m_strEncryptedSignatureData"></param>
+        /// <returns></returns>
         public bool SignatureFormatter(string p_strKeyPrivate, string m_strHashbyteSignature, ref string m_strEncryptedSignatureData)
         {
 
@@ -230,6 +298,13 @@ namespace Netnr.Core
         #endregion
 
         #region RSA 签名验证
+        /// <summary>
+        /// RSA 签名验证
+        /// </summary>
+        /// <param name="p_strKeyPublic"></param>
+        /// <param name="HashbyteDeformatter"></param>
+        /// <param name="DeformatterData"></param>
+        /// <returns></returns>
         public bool SignatureDeformatter(string p_strKeyPublic, byte[] HashbyteDeformatter, byte[] DeformatterData)
         {
 
@@ -251,6 +326,13 @@ namespace Netnr.Core
 
         }
 
+        /// <summary>
+        /// RSA 签名验证
+        /// </summary>
+        /// <param name="p_strKeyPublic"></param>
+        /// <param name="p_strHashbyteDeformatter"></param>
+        /// <param name="DeformatterData"></param>
+        /// <returns></returns>
         public bool SignatureDeformatter(string p_strKeyPublic, string p_strHashbyteDeformatter, byte[] DeformatterData)
         {
 
@@ -276,6 +358,13 @@ namespace Netnr.Core
 
         }
 
+        /// <summary>
+        /// RSA 签名验证
+        /// </summary>
+        /// <param name="p_strKeyPublic"></param>
+        /// <param name="HashbyteDeformatter"></param>
+        /// <param name="p_strDeformatterData"></param>
+        /// <returns></returns>
         public bool SignatureDeformatter(string p_strKeyPublic, byte[] HashbyteDeformatter, string p_strDeformatterData)
         {
 
@@ -301,6 +390,13 @@ namespace Netnr.Core
 
         }
 
+        /// <summary>
+        /// RSA 签名验证
+        /// </summary>
+        /// <param name="p_strKeyPublic"></param>
+        /// <param name="p_strHashbyteDeformatter"></param>
+        /// <param name="p_strDeformatterData"></param>
+        /// <returns></returns>
         public bool SignatureDeformatter(string p_strKeyPublic, string p_strHashbyteDeformatter, string p_strDeformatterData)
         {
 
