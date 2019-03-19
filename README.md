@@ -1,5 +1,5 @@
 # Netnr.ClassLibrary
-公共类库、常用的方法
+> 公共类库、常用的方法
 
 ### [更新日志](CHANGELOG.md)
 
@@ -40,6 +40,9 @@ Install-Package Netnr.Core
 
 
 ### 框架
-`.NETStandard 2.0`
+- .NETStandard 2.0
+- .NETFramework 4.0
 
-`.NETFramework 4.0`
+### Source
+- <https://github.com/netnr/Netnr.ClassLibrary>
+- <https://gitee.com/netnr/Netnr.ClassLibrary>
