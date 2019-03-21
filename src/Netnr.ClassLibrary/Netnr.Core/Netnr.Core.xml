@@ -9,11 +9,6 @@
             缓存
             </summary>
         </member>
-        <member name="F:Netnr.Core.CacheTo.memoryCache">
-            <summary>
-            缓存
-            </summary>
-        </member>
         <member name="M:Netnr.Core.CacheTo.Get(System.String)">
             <summary>
             获取数据缓存
@@ -118,11 +113,10 @@
             客户端信息
             </summary>
         </member>
-        <member name="M:Netnr.Core.ClientTo.#ctor(Microsoft.AspNetCore.Http.HttpContext)">
+        <member name="M:Netnr.Core.ClientTo.#ctor">
             <summary>
             构造
             </summary>
-            <param name="content"></param>
         </member>
         <member name="P:Netnr.Core.ClientTo.IPv4">
             <summary>
@@ -189,12 +183,6 @@
             ]]>
             </summary>  
         </member>
-        <member name="M:Netnr.Core.CmdTo.Shell(System.String)">
-            <summary>
-            Linux操作系统，执行Shell，返回JSON结果
-            </summary>
-            <param name="cmd"></param>
-        </member>
         <member name="T:Netnr.Core.ConsoleTo">
             <summary>
             输出
@@ -225,12 +213,6 @@
             <summary>
             下载
             </summary>
-        </member>
-        <member name="M:Netnr.Core.DownTo.#ctor(Microsoft.AspNetCore.Http.HttpResponse)">
-            <summary>
-            构造
-            </summary>
-            <param name="httpResponse"></param>
         </member>
         <member name="M:Netnr.Core.DownTo.Stream(System.String,System.String)">
             <summary>
@@ -421,12 +403,11 @@
             虚拟路径转换为物理路径
             </summary>
         </member>
-        <member name="M:Netnr.Core.MapPathTo.Map(System.String,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+        <member name="M:Netnr.Core.MapPathTo.Map(System.String)">
             <summary>
-            映射虚拟路径，得到的是wwwroot目录下的路径
+            虚拟路径映射物理路径
             </summary>
             <param name="path"></param>
-            <param name="hosting">环境变量，可选</param>
             <returns></returns>
         </member>
         <member name="T:Netnr.Core.PinyinTo">
@@ -615,6 +596,26 @@
             <param name="HashbyteSignature"></param>
             <param name="EncryptedSignatureData"></param>
             <returns></returns>
+             <param name="objFile"></param>
+            <param name="HashData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Netnr.Core.RsaTo.GetHash(System.IO.FileStream,System.String@)">
+            <summary>
+            获取Hash描述表
+            </summary>
+            <param name="objFile"></param>
+            <param name="strHashData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Netnr.Core.RsaTo.SignatureFormatter(System.String,System.Byte[],System.Byte[]@)">
+            <summary>
+            RSA签名
+            </summary>
+            <param name="p_strKeyPrivate"></param>
+            <param name="HashbyteSignature"></param>
+            <param name="EncryptedSignatureData"></param>
+            <returns></returns>
         </member>
         <member name="M:Netnr.Core.RsaTo.SignatureFormatter(System.String,System.Byte[],System.String@)">
             <summary>
@@ -718,12 +719,12 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="T:Extend">
+        <member name="T:Netnr.Extend">
             <summary>
             常用方法拓展
             </summary>
         </member>
-        <member name="M:Extend.ToJson(System.Object,System.String)">
+        <member name="M:Netnr.Extend.ToJson(System.Object,System.String)">
             <summary>
             object 转 JSON 字符串
             </summary>
@@ -731,21 +732,21 @@
             <param name="DateTimeFormat">时间格式化</param>
             <returns></returns>
         </member>
-        <member name="M:Extend.ToJObject(System.String)">
+        <member name="M:Netnr.Extend.ToJObject(System.String)">
             <summary>
             解析 JSON字符串 为JObject对象
             </summary>
             <param name="json">JSON字符串</param>
             <returns>JObject对象</returns>
         </member>
-        <member name="M:Extend.ToJArray(System.String)">
+        <member name="M:Netnr.Extend.ToJArray(System.String)">
             <summary>
             解析 JSON字符串 为JArray对象
             </summary>
             <param name="json">JSON字符串</param>
             <returns>JArray对象</returns>
         </member>
-        <member name="M:Extend.ToEntity``1(System.String)">
+        <member name="M:Netnr.Extend.ToEntity``1(System.String)">
             <summary>
             JSON字符串 反序列为实体
             </summary>
@@ -753,28 +754,28 @@
             <param name="json"></param>
             <returns></returns>
         </member>
-        <member name="M:Extend.ToStringOrEmpty(Newtonsoft.Json.Linq.JToken)">
+        <member name="M:Netnr.Extend.ToStringOrEmpty(Newtonsoft.Json.Linq.JToken)">
             <summary>
             把jArray里面的json对象转为字符串
             </summary>
             <param name="jt"></param>
             <returns></returns>
         </member>
-        <member name="M:Extend.OfJson(System.String)">
+        <member name="M:Netnr.Extend.OfJson(System.String)">
             <summary>
             字符串 JSON转义
             </summary>
             <param name="s"></param>
             <returns></returns>
         </member>
-        <member name="M:Extend.OfSql(System.String)">
+        <member name="M:Netnr.Extend.OfSql(System.String)">
             <summary>
             SQL单引号转义
             </summary>
             <param name="s"></param>
             <returns></returns>
         </member>
-        <member name="M:Extend.ToDataTable``1(System.Collections.Generic.IList{``0})">
+        <member name="M:Netnr.Extend.ToDataTable``1(System.Collections.Generic.IList{``0})">
             <summary>
             实体转表
             </summary>
@@ -782,7 +783,7 @@
             <param name="list">对象</param>
             <returns></returns>
         </member>
-        <member name="M:Extend.ToModel``1(System.Data.DataTable)">
+        <member name="M:Netnr.Extend.ToModel``1(System.Data.DataTable)">
             <summary>
             表转为实体
             </summary>
@@ -790,7 +791,7 @@
             <param name="table"></param>
             <returns></returns>
         </member>
-        <member name="M:Extend.ToEncode(System.String,System.String)">
+        <member name="M:Netnr.Extend.ToEncode(System.String,System.String)">
             <summary>
             编码
             </summary>
@@ -798,14 +799,14 @@
             <param name="charset"></param>
             <returns></returns>
         </member>
-        <member name="M:Extend.ToDecode(System.String)">
+        <member name="M:Netnr.Extend.ToDecode(System.String)">
             <summary>
             解码
             </summary>
             <param name="uriToDecode"></param>
             <returns></returns>
         </member>
-        <member name="M:Extend.ToTimestamp(System.DateTime)">
+        <member name="M:Netnr.Extend.ToTimestamp(System.DateTime)">
             <summary>
             将Datetime转换成时间戳，10位，秒
             </summary>
