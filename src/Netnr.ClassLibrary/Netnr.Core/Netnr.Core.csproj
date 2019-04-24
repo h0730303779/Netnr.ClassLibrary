@@ -9,11 +9,11 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/netnr/Netnr.ClassLibrary</PackageProjectUrl>
     <RepositoryUrl>https://github.com/netnr/Netnr.ClassLibrary</RepositoryUrl>
-    <PackageLicenseUrl>https://github.com/netnr/Netnr.ClassLibrary/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
     <PackageTags>netnr</PackageTags>
     <PackageReleaseNotes>支持 .net core 与 .net framework</PackageReleaseNotes>
     <Authors>netnr</Authors>
-    <Version>1.0.2</Version>
+    <Version>1.1.0</Version>
     <DocumentationFile>H:\ROOM\Netnr.ClassLibrary\src\Netnr.ClassLibrary\Netnr.Core\Netnr.Core.xml</DocumentationFile>
   </PropertyGroup>
 

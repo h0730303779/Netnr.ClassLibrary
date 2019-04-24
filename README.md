@@ -24,7 +24,6 @@ Install-Package Netnr.Core
 - HttpTo.cs　　HTTP请求（GET、POST等，可设置 `HttpWebRequest` 对象）
 - LamdaTo.cs　　动态生成 Lamda 表达式
 - MapPathTo.cs　　虚拟路径转换为物理路径
-- PinyinTo.cs　　中文转拼音（NPinyin）
 - RandomTo.cs　　生成随机码（验证码）
 - RsaTo.cs　　RSA加密解密及RSA签名和验证
 - TreeTo.cs　　Tree常用方法（List数据集生成JSON tree，菜单多级导航）
@@ -36,6 +35,7 @@ Install-Package Netnr.Core
 - ImageTo.cs　　图片操作（生成验证码、缩略图、水印）
 - NpoiTo.cs　　操作Excel（依赖 `NPOI`，Excel文件与DataTable相互转换，支持 .xls、.xlsx，Framework项目需要引入`SharpZipLib`）
 - PaginationVM.cs　　分页参数实体，无命名空间
+- PinyinTo.cs　　中文转拼音（NPinyin）
 - QueryableTo.cs　　IQueryable对象的拓展，如排序拼接
 
 

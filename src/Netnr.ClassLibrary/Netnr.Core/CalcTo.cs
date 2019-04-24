@@ -36,8 +36,7 @@ namespace Netnr.Core
         /// <returns></returns>
         public static string MD5(string s, int len = 32)
         {
-            string result = "";
-
+            string result;
             MD5CryptoServiceProvider md5Hasher = new MD5CryptoServiceProvider();
             byte[] data = md5Hasher.ComputeHash(Encoding.Default.GetBytes(s));
             StringBuilder sb = new StringBuilder();
