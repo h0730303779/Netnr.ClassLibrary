@@ -13,7 +13,7 @@
     <PackageTags>netnr</PackageTags>
     <PackageReleaseNotes>支持 .net core 与 .net framework</PackageReleaseNotes>
     <Authors>netnr</Authors>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
     <DocumentationFile>H:\ROOM\Netnr.ClassLibrary\src\Netnr.ClassLibrary\Netnr.Core\Netnr.Core.xml</DocumentationFile>
   </PropertyGroup>
 

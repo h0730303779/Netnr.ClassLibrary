@@ -1,5 +1,8 @@
 # 更新日志
 
+### [v1.1.1] - 2019-04-29
+- 添加 `CalcTo` 类，添加 `HMAC_SHA256、384、512` 加密算法
+
 ### [v1.1.0] - 2019-04-24
 - 修复 `CmdTo.Run` 方法
 - 调整 `PingyinTo` 类转移到 `Netnr.Fast` , 即删除 `Core.PingyinTo`

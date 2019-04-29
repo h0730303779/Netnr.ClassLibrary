@@ -175,5 +175,56 @@ namespace Netnr.Core
             byte[] hashBytes = hmacsha1.ComputeHash(dataBuffer);
             return Convert.ToBase64String(hashBytes);
         }
+
+        /// <summary>
+        /// HMAC_SHA256 加密
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public static string HMAC_SHA256(string str, string key)
+        {
+            HMACSHA256 hmacsha256 = new HMACSHA256
+            {
+                Key = Encoding.UTF8.GetBytes(key)
+            };
+            byte[] dataBuffer = Encoding.UTF8.GetBytes(str);
+            byte[] hashBytes = hmacsha256.ComputeHash(dataBuffer);
+            return Convert.ToBase64String(hashBytes);
+        }
+
+        /// <summary>
+        /// HMACSHA384 加密
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public static string HMACSHA384(string str, string key)
+        {
+            HMACSHA384 hmacsha384 = new HMACSHA384
+            {
+                Key = Encoding.UTF8.GetBytes(key)
+            };
+            byte[] dataBuffer = Encoding.UTF8.GetBytes(str);
+            byte[] hashBytes = hmacsha384.ComputeHash(dataBuffer);
+            return Convert.ToBase64String(hashBytes);
+        }
+
+        /// <summary>
+        /// HMACSHA512 加密
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public static string HMACSHA512(string str, string key)
+        {
+            HMACSHA512 hmacsha512 = new HMACSHA512
+            {
+                Key = Encoding.UTF8.GetBytes(key)
+            };
+            byte[] dataBuffer = Encoding.UTF8.GetBytes(str);
+            byte[] hashBytes = hmacsha512.ComputeHash(dataBuffer);
+            return Convert.ToBase64String(hashBytes);
+        }
     }
 }
