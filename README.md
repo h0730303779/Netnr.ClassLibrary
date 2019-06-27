@@ -30,7 +30,6 @@ Install-Package Netnr.Core
 - UniqueTo.cs　　生成唯一的标识（GUID转成long）
 
 ### Netnr.Fast
-- DbSetTo.cs　　Framework拓展 `Update` `UpdateRange` 方法，无命名空间
 - GlobalTo.cs　　Core环境`IConfiguration` `IHostingEnvironment` 对象，`appsettings.json`配置文件
 - ImageTo.cs　　图片操作（生成验证码、缩略图、水印）
 - NpoiTo.cs　　操作Excel（依赖 `NPOI`，Excel文件与DataTable相互转换，支持 .xls、.xlsx，Framework项目需要引入`SharpZipLib`）
