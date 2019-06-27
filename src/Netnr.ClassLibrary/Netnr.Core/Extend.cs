@@ -51,16 +51,25 @@ namespace Netnr
         }
 
         /// <summary>
-        /// JSON字符串 反序列为实体
+        /// JSON字符串 转 实体
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="json"></param>
-        /// <returns></returns>
-        public static List<T> ToEntity<T>(string json) where T : class
+        public static T ToEntity<T>(this string json)
         {
-            var sr = new StringReader(json);
-            object obj = new JsonSerializer().Deserialize(new JsonTextReader(sr), typeof(List<T>));
-            return obj as List<T>;
+            var mo = Newtonsoft.Json.JsonConvert.DeserializeObject<T>(json);
+            return mo;
+        }
+
+        /// <summary>
+        /// JSON字符串 转 实体
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="json"></param>
+        public static List<T> ToEntitys<T>(this string json)
+        {
+            var list = Newtonsoft.Json.JsonConvert.DeserializeObject<List<T>>(json);
+            return list;
         }
 
         /// <summary>

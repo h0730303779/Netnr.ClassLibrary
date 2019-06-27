@@ -9,11 +9,6 @@
             缓存
             </summary>
         </member>
-        <member name="F:Netnr.Core.CacheTo.memoryCache">
-            <summary>
-            缓存
-            </summary>
-        </member>
         <member name="M:Netnr.Core.CacheTo.Get(System.String)">
             <summary>
             获取数据缓存
@@ -111,6 +106,9 @@
             </summary>
             <param name="str"></param>
             <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Netnr.Core.CalcTo.HMAC_SHA256(System.String,Sysname="key"></param>
             <returns></returns>
         </member>
         <member name="M:Netnr.Core.CalcTo.HMAC_SHA256(System.String,System.String)">
@@ -228,19 +226,7 @@
             <summary>
             写入错误信息
             </summary>
-            <param name="ex"></param>
-            <param name="isFull">是否全部信息，默认false</param>
-        </member>
-        <member name="M:Netnr.Core.ConsoleTo.Log(System.String)">
-            <summary>
-            写入消息
-            </summary>
-            <param name="msg"></param>
-        </member>
-        <member name="M:Netnr.Core.ConsoleTo.ExceptionGet(System.Exception,System.Boolean)">
-            <summary>
-            获取异常信息
-            </summary>
+            <param name="ex"></param>ry>
             <param name="ex"></param>
             <param name="isFull">是否包含堆栈所有信息，默认 false</param>
             <returns></returns>
@@ -249,12 +235,6 @@
             <summary>
             下载
             </summary>
-        </member>
-        <member name="M:Netnr.Core.DownTo.#ctor(Microsoft.AspNetCore.Http.HttpResponse)">
-            <summary>
-            构造
-            </summary>
-            <param name="httpResponse"></param>
         </member>
         <member name="M:Netnr.Core.DownTo.Stream(System.String,System.String)">
             <summary>
@@ -332,6 +312,25 @@
             <param name="url">地址</param>
             <param name="data">POST数据</param>
             <param name="charset">编码，默认utf-8</param>
+            <returns></returns>
+        </member>
+        <member name="T:Netnr.Core.LamdaTo">
+            <summary>
+            动态生成lamda表达式
+            </summary>
+        </member>
+        <member name="M:Netnr.Core.LamdaTo.True``1">
+            <summary>
+            创建lambda表达式：p=>true
+            </summary>
+            <typeparam name="T">对象名称（类名）</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Netnr.Core.LamdaTo.False``1">
+            <summary>
+            创建lambda表达式：p=>false
+            </summary>
+                <param name="charset">编码，默认utf-8</param>
             <returns></returns>
         </member>
         <member name="T:Netnr.Core.LamdaTo">
@@ -690,11 +689,17 @@
         </member>
         <member name="M:Netnr.Extend.ToEntity``1(System.String)">
             <summary>
-            JSON字符串 反序列为实体
+            JSON字符串 转 实体
             </summary>
             <typeparam name="T"></typeparam>
             <param name="json"></param>
-            <returns></returns>
+        </member>
+        <member name="M:Netnr.Extend.ToEntitys``1(System.String)">
+            <summary>
+            JSON字符串 转 实体
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="json"></param>
         </member>
         <member name="M:Netnr.Extend.ToStringOrEmpty(Newtonsoft.Json.Linq.JToken)">
             <summary>
