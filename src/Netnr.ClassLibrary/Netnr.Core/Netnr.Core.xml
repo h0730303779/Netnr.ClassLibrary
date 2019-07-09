@@ -108,9 +108,6 @@
             <param name="key"></param>
             <returns></returns>
         </member>
-        <member name="M:Netnr.Core.CalcTo.HMAC_SHA256(System.String,Sysname="key"></param>
-            <returns></returns>
-        </member>
         <member name="M:Netnr.Core.CalcTo.HMAC_SHA256(System.String,System.String)">
             <summary>
             HMAC_SHA256 加密
@@ -140,11 +137,10 @@
             客户端信息
             </summary>
         </member>
-        <member name="M:Netnr.Core.ClientTo.#ctor(Microsoft.AspNetCore.Http.HttpContext)">
+        <member name="M:Netnr.Core.ClientTo.#ctor">
             <summary>
             构造
             </summary>
-            <param name="content"></param>
         </member>
         <member name="P:Netnr.Core.ClientTo.IPv4">
             <summary>
@@ -211,12 +207,6 @@
             ]]>
             </summary>  
         </member>
-        <member name="M:Netnr.Core.CmdTo.Shell(System.String)">
-            <summary>
-            Linux操作系统，执行Shell，返回JSON结果
-            </summary>
-            <param name="cmd"></param>
-        </member>
         <member name="T:Netnr.Core.ConsoleTo">
             <summary>
             输出
@@ -226,7 +216,19 @@
             <summary>
             写入错误信息
             </summary>
-            <param name="ex"></param>ry>
+            <param name="ex"></param>
+            <param name="isFull">是否全部信息，默认false</param>
+        </member>
+        <member name="M:Netnr.Core.ConsoleTo.Log(System.String)">
+            <summary>
+            写入消息
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="M:Netnr.Core.ConsoleTo.ExceptionGet(System.Exception,System.Boolean)">
+            <summary>
+            获取异常信息
+            </summary>
             <param name="ex"></param>
             <param name="isFull">是否包含堆栈所有信息，默认 false</param>
             <returns></returns>
@@ -706,6 +708,22 @@
             把jArray里面的json对象转为字符串
             </summary>
             <param name="jt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Netnr.Extend.ConvertValue(System.Type,System.String)">
+            <summary>
+            值类型转换
+            </summary>
+            <param name="type">类型</param>
+            <param name="value">值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Netnr.Extend.ConvertValue``1(System.String)">
+            <summary>
+            值类型转换
+            </summary>
+            <typeparam name="T">类型</typeparam>
+            <param name="value">值</param>
             <returns></returns>
         </member>
         <member name="M:Netnr.Extend.OfJson(System.String)">
