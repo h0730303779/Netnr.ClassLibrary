@@ -14,7 +14,7 @@ namespace Netnr.Core
         /// </summary>
         /// <param name="url">地址</param>
         /// <param name="type">请求类型，默认GET</param>
-        /// <param name="data">POST数据</param>
+        /// <param name="data">发送数据，非GET、DELETE请求</param>
         /// <param name="charset">编码，默认utf-8</param>
         /// <returns></returns>
         public static HttpWebRequest HWRequest(string url, string type = "GET", string data = null, string charset = "utf-8")
@@ -27,7 +27,7 @@ namespace Netnr.Core
             request.Timeout = short.MaxValue * 3;//MS
             request.ContentType = "application/x-www-form-urlencoded";
 
-            if (type != "GET" && data != null)
+            if (type != "GET" && type != "DELETE" && data != null)
             {
                 //发送内容
                 byte[] bytes = Encoding.GetEncoding(charset).GetBytes(data);
@@ -76,7 +76,7 @@ namespace Netnr.Core
         /// POST请求
         /// </summary>
         /// <param name="url">地址</param>
-        /// <param name="data">POST数据</param>
+        /// <param name="data">发送数据</param>
         /// <param name="charset">编码，默认utf-8</param>
         /// <returns></returns>
         public static string Post(string url, string data, string charset = "utf-8")
