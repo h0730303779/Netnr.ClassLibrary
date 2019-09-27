@@ -63,8 +63,8 @@ namespace Netnr.Core
     }
 }
 #else
-using Microsoft.Extensions.Caching.Memory;
 using System;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace Netnr.Core
 {

@@ -1,4 +1,11 @@
 # 更新日志
+### [v1.2.0] - 2019-09-27
+- 调整 项目框架为 `.NET Standard 2.1`
+- 调整 `CmdTo.Shell` 方法，输出`BashResult`对象，直接集成`Shell.NET`源码去除引用
+- 调整 `ClientTo` 类转移到 `Netnr.Fast` , 即删除 `Core.ClientTo`
+- 调整 `DownTo` 类转移到 `Netnr.Fast` , 即删除 `Core.DownTo`
+- 调整 `ConsoleTo.Log` 方法，支持`object`输出，内部自动转换
+- 删除 `MapPathTo` 类
 
 ### [v1.1.1] - 2019-06-27
 - 添加 `CalcTo` 类，添加 `HMAC_SHA256、384、512` 加密算法

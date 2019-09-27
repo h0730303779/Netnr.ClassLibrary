@@ -23,12 +23,21 @@ namespace Netnr.Core
         /// 写入消息
         /// </summary>
         /// <param name="msg"></param>
-        public static void Log(string msg)
+        public static void Log(object msg)
         {
+            string txt;
+            try
+            {
+                txt = msg.ToJson();
+            }
+            catch (Exception)
+            {
+                txt = msg.ToString();
+            }
+
             var dt = DateTime.Now;
-            var path = "/logs/" + dt.ToString("yyyyMM") + "/";
-            path = MapPathTo.Map(path);
-            FileTo.WriteText(msg, path, "console_" + dt.ToString("yyyyMMdd") + ".log");
+            var path = AppDomain.CurrentDomain.BaseDirectory.Replace("\\", "/").TrimEnd('/') + "/logs/" + dt.ToString("yyyyMM") + "/";
+            FileTo.WriteText(txt, path, "console_" + dt.ToString("yyyyMMdd") + ".log");
         }
 
         /// <summary>

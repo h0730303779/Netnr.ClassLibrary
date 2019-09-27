@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data;
-using System.IO;
 using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
@@ -57,7 +56,7 @@ namespace Netnr
         /// <param name="json"></param>
         public static T ToEntity<T>(this string json)
         {
-            var mo = Newtonsoft.Json.JsonConvert.DeserializeObject<T>(json);
+            var mo = JsonConvert.DeserializeObject<T>(json);
             return mo;
         }
 
@@ -68,7 +67,7 @@ namespace Netnr
         /// <param name="json"></param>
         public static List<T> ToEntitys<T>(this string json)
         {
-            var list = Newtonsoft.Json.JsonConvert.DeserializeObject<List<T>>(json);
+            var list = JsonConvert.DeserializeObject<List<T>>(json);
             return list;
         }
 

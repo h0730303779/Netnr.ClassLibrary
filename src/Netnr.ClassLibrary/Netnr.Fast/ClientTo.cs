@@ -1,33 +1,13 @@
-﻿#if NET40
-#else
+﻿using System.Net;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Net.Http.Headers;
-#endif
-using System.Net;
 
-namespace Netnr.Core
+namespace Netnr.Fast
 {
     /// <summary>
     /// 客户端信息
     /// </summary>
     public class ClientTo
     {
-#if NET40
-        /// <summary>
-        /// 构造
-        /// </summary>
-        public ClientTo()
-        {
-            var Request = System.Web.HttpContext.Current.Request;
-            var header = Request.Headers;
-
-            IPv4 = Request.UserHostAddress;
-            Language = header["Accept-Language"].ToString().Split(';')[0];
-
-            string ua = header["User-Agent"].ToString();
-            UserAgentGet(ua);
-        }
-#else
         /// <summary>
         /// 构造
         /// </summary>
@@ -42,12 +22,13 @@ namespace Netnr.Core
             {
                 IPv4 = header["X-Forwarded-For"].ToString();
             }
-            Language = header[HeaderNames.AcceptLanguage].ToString().Split(';')[0];
 
-            string ua = header[HeaderNames.UserAgent].ToString();
+            Language = header["Accept-Language"].ToString().Split(';')[0];
+            Referer = header["Referer"].ToString();
+
+            string ua = header["User-Agent"].ToString();
             UserAgentGet(ua);
         }
-#endif
 
         /// <summary>
         /// IPv4
@@ -83,6 +64,11 @@ namespace Netnr.Core
         /// 语言
         /// </summary>
         public string Language { get; set; }
+
+        /// <summary>
+        /// 引荐
+        /// </summary>
+        public string Referer { get; set; }
 
         /// <summary>
         /// 提取UserAgent信息
