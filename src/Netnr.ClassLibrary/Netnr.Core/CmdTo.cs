@@ -57,7 +57,7 @@ namespace Netnr.Core
         /// <param name="cmd"></param>
         public static BashResult Shell(string cmd)
         {
-            return new Bash().Command(cmd, false);
+            return new Bash().Command(cmd);
         }
 
         /// <summary>

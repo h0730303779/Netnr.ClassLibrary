@@ -32,6 +32,7 @@ Install-Package Netnr.Core
 - GlobalTo.cs　　Core环境`IConfiguration` `IHostEnvironment` 对象，`appsettings.json`配置文件
 - ImageTo.cs　　图片操作（生成验证码、缩略图、水印）
 - NpoiTo.cs　　操作Excel（依赖 `NPOI`，Excel文件与DataTable相互转换，支持 .xls、.xlsx，Framework项目需要引入`SharpZipLib`）
+- OSInfoTo.cs　　获取系统信息（依赖`Cmd`、`Shell`命令）
 - PaginationVM.cs　　分页参数实体，无命名空间
 - PinyinTo.cs　　中文转拼音（NPinyin）
 - QueryableTo.cs　　IQueryable对象的拓展，如排序拼接

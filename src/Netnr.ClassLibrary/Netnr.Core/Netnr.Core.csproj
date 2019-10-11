@@ -11,14 +11,9 @@
     <RepositoryUrl>https://github.com/netnr/Netnr.ClassLibrary</RepositoryUrl>
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageTags>netnr</PackageTags>
-    <PackageReleaseNotes>- 调整 项目框架为 `.NET Standard 2.1`
-- 调整 `CmdTo.Shell` 方法，输出`BashResult`对象，直接集成`Shell.NET`源码去除引用
-- 调整 `ClientTo` 类转移到 `Netnr.Fast` , 即删除 `Core.ClientTo`
-- 调整 `DownTo` 类转移到 `Netnr.Fast` , 即删除 `Core.DownTo`
-- 调整 `ConsoleTo.Log` 方法，支持`object`输出，内部自动转换
-- 删除 `MapPathTo` 类</PackageReleaseNotes>
+    <PackageReleaseNotes>- 修复 `CmdTo.Shell` 方法</PackageReleaseNotes>
     <Authors>netnr</Authors>
-    <Version>1.2.0</Version>
+    <Version>1.2.1</Version>
     <DocumentationFile>D:\ROOM\Netnr.ClassLibrary\src\Netnr.ClassLibrary\Netnr.Core\Netnr.Core.xml</DocumentationFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>

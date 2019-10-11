@@ -1,4 +1,8 @@
 # 更新日志
+### [v1.2.1] - 2019-10-11
+- 修复 `CmdTo.Shell` 方法
+- 添加 `Netnr.Fast.OSInfoTo` 类
+
 ### [v1.2.0] - 2019-09-27
 - 调整 项目框架为 `.NET Standard 2.1`
 - 调整 `CmdTo.Shell` 方法，输出`BashResult`对象，直接集成`Shell.NET`源码去除引用
