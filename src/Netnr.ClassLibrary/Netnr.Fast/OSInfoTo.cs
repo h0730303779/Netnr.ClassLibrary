@@ -254,8 +254,8 @@ namespace Netnr.Fast
                     listld.Add(new
                     {
                         Name = dis[0],
-                        Size = dis[1],
-                        FreeSpace = dis[2]
+                        Size = long.Parse(dis[1]) * 1024,
+                        FreeSpace = long.Parse(dis[3]) * 1024
                     });
                 }
 
