@@ -34,6 +34,7 @@
             <summary>
             移除指定数据缓存
             </summary>
+            <param name="CacheKey">键</param>
         </member>
         <member name="M:Netnr.Core.CacheTo.RemoveAll">
             <summary>
@@ -65,76 +66,76 @@
             <summary> 
             DES 加密 
             </summary> 
-            <param name="Text"></param> 
-            <param name="sKey"></param> 
+            <param name="Text">内容</param> 
+            <param name="sKey">密钥</param> 
             <returns></returns> 
         </member>
         <member name="M:Netnr.Core.CalcTo.DeDES(System.String,System.String)">
             <summary> 
             DES 解密 
             </summary> 
-            <param name="Text"></param> 
-            <param name="sKey"></param> 
+            <param name="Text">内容</param> 
+            <param name="sKey">密钥</param> 
             <returns></returns> 
         </member>
         <member name="M:Netnr.Core.CalcTo.SHA128(System.String)">
             <summary>
             20字节,160位
             </summary>
-            <param name="str"></param>
+            <param name="str">内容</param>
             <returns></returns>
         </member>
         <member name="M:Netnr.Core.CalcTo.SHA256(System.String)">
             <summary>
             32字节,256位
             </summary>
-            <param name="str"></param>
+            <param name="str">内容</param>
             <returns></returns>
         </member>
         <member name="M:Netnr.Core.CalcTo.SHA384(System.String)">
             <summary>
             48字节,384位
             </summary>
-            <param name="str"></param>
+            <param name="str">内容</param>
             <returns></returns>
         </member>
         <member name="M:Netnr.Core.CalcTo.SHA512(System.String)">
             <summary>
             64字节,512位
             </summary>
-            <param name="str"></param>
+            <param name="str">内容</param>
             <returns></returns>
         </member>
         <member name="M:Netnr.Core.CalcTo.HMAC_SHA1(System.String,System.String)">
             <summary>
             HMAC_SHA1 加密
             </summary>
-            <param name="str"></param>
-            <param name="key"></param>
+            <param name="str">内容</param>
+            <param name="key">密钥</param>
             <returns></returns>
         </member>
         <member name="M:Netnr.Core.CalcTo.HMAC_SHA256(System.String,System.String)">
             <summary>
             HMAC_SHA256 加密
             </summary>
-            <param name="str"></param>
-            <param name="key"></param>
+            <param name="str">内容</param>
+            <param name="key">密钥</param>
             <returns></returns>
         </member>
         <member name="M:Netnr.Core.CalcTo.HMACSHA384(System.String,System.String)">
             <summary>
             HMACSHA384 加密
             </summary>
-            <param name="str"></param>
-            <param name="key"></param>
+            <param name="str">内容</param>
+            <param name="key">密钥</param>
             <returns></returns>
         </member>
         <member name="M:Netnr.Core.CalcTo.HMACSHA512(System.String,System.String)">
             <summary>
             HMACSHA512 加密
             </summary>
-            <param name="str"></param>
-            <param name="key"></param>
+            <param name="str">内容</param>
+            <param name="key">密钥</param>
             <returns></returns>
         </member>
         <member name="T:Netnr.Core.CmdTo">
@@ -737,7 +738,7 @@
         </member>
         <member name="M:Netnr.Core.UniqueTo.LongId">
             <summary>
-            根据Guid获取唯一数字序列
+            根据Guid获取唯一数字序列，19位
             </summary>
             <returns></returns>
         </member>
@@ -772,35 +773,35 @@
             <summary>
             JSON字符串 转 实体
             </summary>
-            <typeparam name="T"></typeparam>
-            <param name="json"></param>
+            <typeparam name="T">实体泛型</typeparam>
+            <param name="json">JSON字符串</param>
         </member>
         <member name="M:Netnr.Extend.ToEntitys``1(System.String)">
             <summary>
             JSON字符串 转 实体
             </summary>
-            <typeparam name="T"></typeparam>
-            <param name="json"></param>
+            <typeparam name="T">实体泛型</typeparam>
+            <param name="json">JSON字符串</param>
         </member>
         <member name="M:Netnr.Extend.ToStringOrEmpty(Newtonsoft.Json.Linq.JToken)">
             <summary>
             把jArray里面的json对象转为字符串
             </summary>
-            <param name="jt"></param>
+            <param name="jt">JToken对象</param>
             <returns></returns>
         </member>
         <member name="M:Netnr.Extend.OfJson(System.String)">
             <summary>
             字符串 JSON转义
             </summary>
-            <param name="s"></param>
+            <param name="s">字符串</param>
             <returns></returns>
         </member>
         <member name="M:Netnr.Extend.OfSql(System.String)">
             <summary>
             SQL单引号转义
             </summary>
-            <param name="s"></param>
+            <param name="s">字符串</param>
             <returns></returns>
         </member>
         <member name="M:Netnr.Extend.ToDataTable``1(System.Collections.Generic.IList{``0})">
@@ -815,30 +816,31 @@
             <summary>
             表转为实体
             </summary>
-            <typeparam name="T"></typeparam>
-            <param name="table"></param>
+            <typeparam name="T">泛型</typeparam>
+            <param name="table">表</param>
             <returns></returns>
         </member>
         <member name="M:Netnr.Extend.ToEncode(System.String,System.String)">
             <summary>
             编码
             </summary>
-            <param name="uri"></param>
-            <param name="charset"></param>
+            <param name="uri">内容</param>
+            <param name="charset">编码格式</param>
             <returns></returns>
         </member>
         <member name="M:Netnr.Extend.ToDecode(System.String)">
             <summary>
             解码
             </summary>
-            <param name="uriToDecode"></param>
+            <param name="uriToDecode">内容</param>
             <returns></returns>
         </member>
-        <member name="M:Netnr.Extend.ToTimestamp(System.DateTime)">
+        <member name="M:Netnr.Extend.ToTimestamp(System.DateTime,System.Boolean)">
             <summary>
-            将Datetime转换成时间戳，10位，秒
+            将Datetime转换成时间戳，10位：秒 或 13位：毫秒
             </summary>
             <param name="datetime"></param>
+            <param name="isms">毫秒，默认false为秒，设为true，返回13位，毫秒</param>
             <returns></returns>
         </member>
     </members>

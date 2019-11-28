@@ -77,10 +77,8 @@ namespace Netnr.Core
                     e = Encoding.UTF8;
                 }
 
-                using (var sr = new StreamReader(path + fileName, Encoding.Default))
-                {
-                    result = sr.ReadToEnd();
-                }
+                using var sr = new StreamReader(path + fileName, Encoding.Default);
+                result = sr.ReadToEnd();
             }
             catch (System.Exception)
             {

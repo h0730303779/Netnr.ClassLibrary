@@ -37,7 +37,7 @@ namespace Netnr.Core
         public static string MD5(string s, int len = 32)
         {
             string result;
-            MD5CryptoServiceProvider md5Hasher = new MD5CryptoServiceProvider();
+            using MD5CryptoServiceProvider md5Hasher = new MD5CryptoServiceProvider();
             byte[] data = md5Hasher.ComputeHash(Encoding.Default.GetBytes(s));
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < data.Length; i++)
@@ -51,11 +51,12 @@ namespace Netnr.Core
         }
 
         #region DES 加解密
+
         /// <summary> 
         /// DES 加密 
         /// </summary> 
-        /// <param name="Text"></param> 
-        /// <param name="sKey"></param> 
+        /// <param name="Text">内容</param> 
+        /// <param name="sKey">密钥</param> 
         /// <returns></returns> 
         public static string EnDES(string Text, string sKey)
         {
@@ -65,7 +66,7 @@ namespace Netnr.Core
             des.Key = Encoding.ASCII.GetBytes(MD5(sKey).Substring(0, 8));
             des.IV = Encoding.ASCII.GetBytes(MD5(sKey).Substring(0, 8));
             System.IO.MemoryStream ms = new System.IO.MemoryStream();
-            CryptoStream cs = new CryptoStream(ms, des.CreateEncryptor(), CryptoStreamMode.Write);
+            using CryptoStream cs = new CryptoStream(ms, des.CreateEncryptor(), CryptoStreamMode.Write);
             cs.Write(inputByteArray, 0, inputByteArray.Length);
             cs.FlushFinalBlock();
             StringBuilder ret = new StringBuilder();
@@ -79,8 +80,8 @@ namespace Netnr.Core
         /// <summary> 
         /// DES 解密 
         /// </summary> 
-        /// <param name="Text"></param> 
-        /// <param name="sKey"></param> 
+        /// <param name="Text">内容</param> 
+        /// <param name="sKey">密钥</param> 
         /// <returns></returns> 
         public static string DeDES(string Text, string sKey)
         {
@@ -97,11 +98,12 @@ namespace Netnr.Core
             des.Key = Encoding.ASCII.GetBytes(MD5(sKey).Substring(0, 8));
             des.IV = Encoding.ASCII.GetBytes(MD5(sKey).Substring(0, 8));
             System.IO.MemoryStream ms = new System.IO.MemoryStream();
-            CryptoStream cs = new CryptoStream(ms, des.CreateDecryptor(), CryptoStreamMode.Write);
+            using CryptoStream cs = new CryptoStream(ms, des.CreateDecryptor(), CryptoStreamMode.Write);
             cs.Write(inputByteArray, 0, inputByteArray.Length);
             cs.FlushFinalBlock();
             return Encoding.Default.GetString(ms.ToArray());
         }
+
         #endregion
 
         #region SHA1 加密
@@ -109,12 +111,12 @@ namespace Netnr.Core
         /// <summary>
         /// 20字节,160位
         /// </summary>
-        /// <param name="str"></param>
+        /// <param name="str">内容</param>
         /// <returns></returns>
         public static string SHA128(string str)
         {
             byte[] buffer = Encoding.UTF8.GetBytes(str);
-            SHA1CryptoServiceProvider SHA1 = new SHA1CryptoServiceProvider();
+            using SHA1CryptoServiceProvider SHA1 = new SHA1CryptoServiceProvider();
             byte[] byteArr = SHA1.ComputeHash(buffer);
             return BitConverter.ToString(byteArr);
         }
@@ -122,12 +124,12 @@ namespace Netnr.Core
         /// <summary>
         /// 32字节,256位
         /// </summary>
-        /// <param name="str"></param>
+        /// <param name="str">内容</param>
         /// <returns></returns>
         public static string SHA256(string str)
         {
             byte[] buffer = Encoding.UTF8.GetBytes(str);
-            SHA256CryptoServiceProvider SHA256 = new SHA256CryptoServiceProvider();
+            using SHA256CryptoServiceProvider SHA256 = new SHA256CryptoServiceProvider();
             byte[] byteArr = SHA256.ComputeHash(buffer);
             return BitConverter.ToString(byteArr);
         }
@@ -135,12 +137,12 @@ namespace Netnr.Core
         /// <summary>
         /// 48字节,384位
         /// </summary>
-        /// <param name="str"></param>
+        /// <param name="str">内容</param>
         /// <returns></returns>
         public static string SHA384(string str)
         {
             byte[] buffer = Encoding.UTF8.GetBytes(str);
-            SHA384CryptoServiceProvider SHA384 = new SHA384CryptoServiceProvider();
+            using SHA384CryptoServiceProvider SHA384 = new SHA384CryptoServiceProvider();
             byte[] byteArr = SHA384.ComputeHash(buffer);
             return BitConverter.ToString(byteArr);
         }
@@ -148,12 +150,12 @@ namespace Netnr.Core
         /// <summary>
         /// 64字节,512位
         /// </summary>
-        /// <param name="str"></param>
+        /// <param name="str">内容</param>
         /// <returns></returns>
         public static string SHA512(string str)
         {
             byte[] buffer = Encoding.UTF8.GetBytes(str);
-            SHA512CryptoServiceProvider SHA512 = new SHA512CryptoServiceProvider();
+            using SHA512CryptoServiceProvider SHA512 = new SHA512CryptoServiceProvider();
             byte[] byteArr = SHA512.ComputeHash(buffer);
             return BitConverter.ToString(byteArr);
         }
@@ -162,12 +164,12 @@ namespace Netnr.Core
         /// <summary>
         /// HMAC_SHA1 加密
         /// </summary>
-        /// <param name="str"></param>
-        /// <param name="key"></param>
+        /// <param name="str">内容</param>
+        /// <param name="key">密钥</param>
         /// <returns></returns>
         public static string HMAC_SHA1(string str, string key)
         {
-            HMACSHA1 hmacsha1 = new HMACSHA1
+            using HMACSHA1 hmacsha1 = new HMACSHA1
             {
                 Key = Encoding.UTF8.GetBytes(key)
             };
@@ -179,12 +181,12 @@ namespace Netnr.Core
         /// <summary>
         /// HMAC_SHA256 加密
         /// </summary>
-        /// <param name="str"></param>
-        /// <param name="key"></param>
+        /// <param name="str">内容</param>
+        /// <param name="key">密钥</param>
         /// <returns></returns>
         public static string HMAC_SHA256(string str, string key)
         {
-            HMACSHA256 hmacsha256 = new HMACSHA256
+            using HMACSHA256 hmacsha256 = new HMACSHA256
             {
                 Key = Encoding.UTF8.GetBytes(key)
             };
@@ -196,12 +198,12 @@ namespace Netnr.Core
         /// <summary>
         /// HMACSHA384 加密
         /// </summary>
-        /// <param name="str"></param>
-        /// <param name="key"></param>
+        /// <param name="str">内容</param>
+        /// <param name="key">密钥</param>
         /// <returns></returns>
         public static string HMACSHA384(string str, string key)
         {
-            HMACSHA384 hmacsha384 = new HMACSHA384
+            using HMACSHA384 hmacsha384 = new HMACSHA384
             {
                 Key = Encoding.UTF8.GetBytes(key)
             };
@@ -213,12 +215,12 @@ namespace Netnr.Core
         /// <summary>
         /// HMACSHA512 加密
         /// </summary>
-        /// <param name="str"></param>
-        /// <param name="key"></param>
+        /// <param name="str">内容</param>
+        /// <param name="key">密钥</param>
         /// <returns></returns>
         public static string HMACSHA512(string str, string key)
         {
-            HMACSHA512 hmacsha512 = new HMACSHA512
+            using HMACSHA512 hmacsha512 = new HMACSHA512
             {
                 Key = Encoding.UTF8.GetBytes(key)
             };

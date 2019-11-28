@@ -53,11 +53,9 @@ namespace Netnr.Core
             if (string.Compare(response.ContentEncoding, "gzip", true) >= 0)
                 responseStream = new System.IO.Compression.GZipStream(responseStream, System.IO.Compression.CompressionMode.Decompress);
 
-            using (var sr = new StreamReader(responseStream, Encoding.GetEncoding(charset)))
-            {
-                var result = sr.ReadToEnd();
-                return result;
-            }
+            using var sr = new StreamReader(responseStream, Encoding.GetEncoding(charset));
+            var result = sr.ReadToEnd();
+            return result;
         }
 
         /// <summary>

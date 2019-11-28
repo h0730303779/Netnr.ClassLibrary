@@ -18,7 +18,7 @@ namespace Netnr.Core
         /// <param name="xmlPublicKey"></param>
         public void RSAKey(out string xmlKeys, out string xmlPublicKey)
         {
-            RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
+            using RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
             xmlKeys = rsa.ToXmlString(true);
             xmlPublicKey = rsa.ToXmlString(false);
         }
@@ -33,17 +33,15 @@ namespace Netnr.Core
         /// <returns></returns>
         public string RSAEncrypt(string xmlPublicKey, string m_strEncryptString)
         {
-
             byte[] PlainTextBArray;
             byte[] CypherTextBArray;
             string Result;
-            RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
+            using RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
             rsa.FromXmlString(xmlPublicKey);
             PlainTextBArray = (new UnicodeEncoding()).GetBytes(m_strEncryptString);
             CypherTextBArray = rsa.Encrypt(PlainTextBArray, false);
             Result = Convert.ToBase64String(CypherTextBArray);
             return Result;
-
         }
 
         /// <summary>
@@ -54,15 +52,13 @@ namespace Netnr.Core
         /// <returns></returns>
         public string RSAEncrypt(string xmlPublicKey, byte[] EncryptString)
         {
-
             byte[] CypherTextBArray;
             string Result;
-            RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
+            using RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
             rsa.FromXmlString(xmlPublicKey);
             CypherTextBArray = rsa.Encrypt(EncryptString, false);
             Result = Convert.ToBase64String(CypherTextBArray);
             return Result;
-
         }
         #endregion
 
@@ -79,13 +75,12 @@ namespace Netnr.Core
             byte[] PlainTextBArray;
             byte[] DypherTextBArray;
             string Result;
-            RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
+            using RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
             rsa.FromXmlString(xmlPrivateKey);
             PlainTextBArray = Convert.FromBase64String(m_strDecryptString);
             DypherTextBArray = rsa.Decrypt(PlainTextBArray, false);
             Result = (new UnicodeEncoding()).GetString(DypherTextBArray);
             return Result;
-
         }
 
         /// <summary>
@@ -98,12 +93,11 @@ namespace Netnr.Core
         {
             byte[] DypherTextBArray;
             string Result;
-            RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
+            using RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
             rsa.FromXmlString(xmlPrivateKey);
             DypherTextBArray = rsa.Decrypt(DecryptString, false);
             Result = (new UnicodeEncoding()).GetString(DypherTextBArray);
             return Result;
-
         }
         #endregion
 
@@ -122,7 +116,7 @@ namespace Netnr.Core
         {
             //从字符串中取得Hash描述 
             byte[] Buffer;
-            HashAlgorithm MD5 = HashAlgorithm.Create("MD5");
+            using HashAlgorithm MD5 = HashAlgorithm.Create("MD5");
             Buffer = Encoding.GetEncoding("GB2312").GetBytes(m_strSource);
             HashData = MD5.ComputeHash(Buffer);
 
@@ -137,17 +131,15 @@ namespace Netnr.Core
         /// <returns></returns>
         public bool GetHash(string m_strSource, ref string strHashData)
         {
-
             //从字符串中取得Hash描述 
             byte[] Buffer;
             byte[] HashData;
-            HashAlgorithm MD5 = HashAlgorithm.Create("MD5");
+            using HashAlgorithm MD5 = HashAlgorithm.Create("MD5");
             Buffer = Encoding.GetEncoding("GB2312").GetBytes(m_strSource);
             HashData = MD5.ComputeHash(Buffer);
 
             strHashData = Convert.ToBase64String(HashData);
             return true;
-
         }
 
         /// <summary>
@@ -158,14 +150,12 @@ namespace Netnr.Core
         /// <returns></returns>
         public bool GetHash(System.IO.FileStream objFile, ref byte[] HashData)
         {
-
             //从文件中取得Hash描述 
-            HashAlgorithm MD5 = HashAlgorithm.Create("MD5");
+            using HashAlgorithm MD5 = HashAlgorithm.Create("MD5");
             HashData = MD5.ComputeHash(objFile);
             objFile.Close();
 
             return true;
-
         }
 
         /// <summary>
@@ -176,17 +166,15 @@ namespace Netnr.Core
         /// <returns></returns>
         public bool GetHash(System.IO.FileStream objFile, ref string strHashData)
         {
-
             //从文件中取得Hash描述 
             byte[] HashData;
-            HashAlgorithm MD5 = HashAlgorithm.Create("MD5");
+            using HashAlgorithm MD5 = HashAlgorithm.Create("MD5");
             HashData = MD5.ComputeHash(objFile);
             objFile.Close();
 
             strHashData = Convert.ToBase64String(HashData);
 
             return true;
-
         }
         #endregion
 
@@ -200,7 +188,6 @@ namespace Netnr.Core
         /// <returns></returns>
         public bool SignatureFormatter(string p_strKeyPrivate, byte[] HashbyteSignature, ref byte[] EncryptedSignatureData)
         {
-
             RSACryptoServiceProvider RSA = new RSACryptoServiceProvider();
 
             RSA.FromXmlString(p_strKeyPrivate);
@@ -211,7 +198,6 @@ namespace Netnr.Core
             EncryptedSignatureData = RSAFormatter.CreateSignature(HashbyteSignature);
 
             return true;
-
         }
 
         /// <summary>
@@ -223,7 +209,6 @@ namespace Netnr.Core
         /// <returns></returns>
         public bool SignatureFormatter(string p_strKeyPrivate, byte[] HashbyteSignature, ref string m_strEncryptedSignatureData)
         {
-
             byte[] EncryptedSignatureData;
 
             RSACryptoServiceProvider RSA = new RSACryptoServiceProvider();
@@ -238,7 +223,6 @@ namespace Netnr.Core
             m_strEncryptedSignatureData = Convert.ToBase64String(EncryptedSignatureData);
 
             return true;
-
         }
 
         /// <summary>
@@ -250,7 +234,6 @@ namespace Netnr.Core
         /// <returns></returns>
         public bool SignatureFormatter(string p_strKeyPrivate, string m_strHashbyteSignature, ref byte[] EncryptedSignatureData)
         {
-
             byte[] HashbyteSignature;
 
             HashbyteSignature = Convert.FromBase64String(m_strHashbyteSignature);
@@ -264,7 +247,6 @@ namespace Netnr.Core
             EncryptedSignatureData = RSAFormatter.CreateSignature(HashbyteSignature);
 
             return true;
-
         }
 
         /// <summary>
@@ -276,7 +258,6 @@ namespace Netnr.Core
         /// <returns></returns>
         public bool SignatureFormatter(string p_strKeyPrivate, string m_strHashbyteSignature, ref string m_strEncryptedSignatureData)
         {
-
             byte[] HashbyteSignature;
             byte[] EncryptedSignatureData;
 
@@ -293,7 +274,6 @@ namespace Netnr.Core
             m_strEncryptedSignatureData = Convert.ToBase64String(EncryptedSignatureData);
 
             return true;
-
         }
         #endregion
 
@@ -307,7 +287,6 @@ namespace Netnr.Core
         /// <returns></returns>
         public bool SignatureDeformatter(string p_strKeyPublic, byte[] HashbyteDeformatter, byte[] DeformatterData)
         {
-
             RSACryptoServiceProvider RSA = new RSACryptoServiceProvider();
 
             RSA.FromXmlString(p_strKeyPublic);
@@ -323,7 +302,6 @@ namespace Netnr.Core
             {
                 return false;
             }
-
         }
 
         /// <summary>
@@ -335,7 +313,6 @@ namespace Netnr.Core
         /// <returns></returns>
         public bool SignatureDeformatter(string p_strKeyPublic, string p_strHashbyteDeformatter, byte[] DeformatterData)
         {
-
             byte[] HashbyteDeformatter;
 
             HashbyteDeformatter = Convert.FromBase64String(p_strHashbyteDeformatter);
@@ -355,7 +332,6 @@ namespace Netnr.Core
             {
                 return false;
             }
-
         }
 
         /// <summary>
@@ -367,7 +343,6 @@ namespace Netnr.Core
         /// <returns></returns>
         public bool SignatureDeformatter(string p_strKeyPublic, byte[] HashbyteDeformatter, string p_strDeformatterData)
         {
-
             byte[] DeformatterData;
 
             RSACryptoServiceProvider RSA = new RSACryptoServiceProvider();
@@ -387,7 +362,6 @@ namespace Netnr.Core
             {
                 return false;
             }
-
         }
 
         /// <summary>
@@ -399,7 +373,6 @@ namespace Netnr.Core
         /// <returns></returns>
         public bool SignatureDeformatter(string p_strKeyPublic, string p_strHashbyteDeformatter, string p_strDeformatterData)
         {
-
             byte[] DeformatterData;
             byte[] HashbyteDeformatter;
 
@@ -421,7 +394,6 @@ namespace Netnr.Core
             {
                 return false;
             }
-
         }
         #endregion
         #endregion

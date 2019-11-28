@@ -6,6 +6,8 @@ namespace Netnr.Test
     {
         static void Main(string[] args)
         {
+            Console.WriteLine(args);
+
             Console.WriteLine("Hello World!");
         }
     }

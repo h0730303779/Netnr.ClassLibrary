@@ -52,8 +52,8 @@ namespace Netnr
         /// <summary>
         /// JSON字符串 转 实体
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="json"></param>
+        /// <typeparam name="T">实体泛型</typeparam>
+        /// <param name="json">JSON字符串</param>
         public static T ToEntity<T>(this string json)
         {
             var mo = JsonConvert.DeserializeObject<T>(json);
@@ -63,8 +63,8 @@ namespace Netnr
         /// <summary>
         /// JSON字符串 转 实体
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="json"></param>
+        /// <typeparam name="T">实体泛型</typeparam>
+        /// <param name="json">JSON字符串</param>
         public static List<T> ToEntitys<T>(this string json)
         {
             var list = JsonConvert.DeserializeObject<List<T>>(json);
@@ -74,7 +74,7 @@ namespace Netnr
         /// <summary>
         /// 把jArray里面的json对象转为字符串
         /// </summary>
-        /// <param name="jt"></param>
+        /// <param name="jt">JToken对象</param>
         /// <returns></returns>
         public static string ToStringOrEmpty(this JToken jt)
         {
@@ -91,7 +91,7 @@ namespace Netnr
         /// <summary>
         /// 字符串 JSON转义
         /// </summary>
-        /// <param name="s"></param>
+        /// <param name="s">字符串</param>
         /// <returns></returns>
         public static string OfJson(this string s)
         {
@@ -127,7 +127,7 @@ namespace Netnr
         /// <summary>
         /// SQL单引号转义
         /// </summary>
-        /// <param name="s"></param>
+        /// <param name="s">字符串</param>
         /// <returns></returns>
         public static string OfSql(this string s)
         {
@@ -157,8 +157,8 @@ namespace Netnr
         /// <summary>
         /// 表转为实体
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="table"></param>
+        /// <typeparam name="T">泛型</typeparam>
+        /// <param name="table">表</param>
         /// <returns></returns>
         public static List<T> ToModel<T>(this DataTable table) where T : class, new()
         {
@@ -199,8 +199,8 @@ namespace Netnr
         /// <summary>
         /// 编码
         /// </summary>
-        /// <param name="uri"></param>
-        /// <param name="charset"></param>
+        /// <param name="uri">内容</param>
+        /// <param name="charset">编码格式</param>
         /// <returns></returns>
         public static string ToEncode(this string uri, string charset = "utf-8")
         {
@@ -228,7 +228,7 @@ namespace Netnr
         /// <summary>
         /// 解码
         /// </summary>
-        /// <param name="uriToDecode"></param>
+        /// <param name="uriToDecode">内容</param>
         /// <returns></returns>
         public static string ToDecode(this string uriToDecode)
         {
@@ -242,13 +242,16 @@ namespace Netnr
         }
 
         /// <summary>
-        /// 将Datetime转换成时间戳，10位，秒
+        /// 将Datetime转换成时间戳，10位：秒 或 13位：毫秒
         /// </summary>
         /// <param name="datetime"></param>
+        /// <param name="isms">毫秒，默认false为秒，设为true，返回13位，毫秒</param>
         /// <returns></returns>
-        public static long ToTimestamp(this DateTime datetime)
+        public static long ToTimestamp(this DateTime datetime, bool isms = false)
         {
-            return (datetime.ToUniversalTime().Ticks - 621355968000000000) / 10000000;
+            var t = datetime.ToUniversalTime().Ticks - 621355968000000000;
+            var tc = t / (isms ? 10000 : 10000000);
+            return tc;
         }
     }
 }

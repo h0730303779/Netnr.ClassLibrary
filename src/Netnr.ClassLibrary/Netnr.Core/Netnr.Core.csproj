@@ -14,13 +14,15 @@
     <PackageReleaseNotes>- 修复 `CmdTo.Shell` 方法</PackageReleaseNotes>
     <Authors>netnr</Authors>
     <Version>1.2.1</Version>
-    <DocumentationFile>D:\ROOM\Netnr.ClassLibrary\src\Netnr.ClassLibrary\Netnr.Core\Netnr.Core.xml</DocumentationFile>
+    <DocumentationFile>Netnr.Core.xml</DocumentationFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net40|AnyCPU'">
     <DefineConstants>TRACE;DEBUG;NET40</DefineConstants>
     <PlatformTarget>AnyCPU</PlatformTarget>
+    <WarningLevel>0</WarningLevel>
   </PropertyGroup>
   
   <ItemGroup>
@@ -35,6 +37,12 @@
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net40'">
     <Reference Include="System.Web" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Netnr.Core.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

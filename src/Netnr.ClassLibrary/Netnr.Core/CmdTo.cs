@@ -94,10 +94,10 @@ namespace Netnr.Core
         /// </summary>
         public class Bash
         {
-            private static bool _linux { get; }
-            private static bool _mac { get; }
-            private static bool _windows { get; }
-            private static string _bashPath { get; }
+            private static bool Plinux { get; }
+            private static bool Pmac { get; }
+            private static bool Pwindows { get; }
+            private static string PbashPath { get; }
 
             /// <summary>Determines whether bash is running in a native OS (Linux/MacOS).</summary>
             /// <returns>True if in *nix, else false.</returns>
@@ -105,7 +105,7 @@ namespace Netnr.Core
 
             /// <summary>Determines if using Windows and if Linux subsystem is installed.</summary>
             /// <returns>True if in Windows and bash detected.</returns>
-            public static bool Subsystem => _windows && System.IO.File.Exists(@"C:\Windows\System32\bash.exe");
+            public static bool Subsystem => Pwindows && System.IO.File.Exists(@"C:\Windows\System32\bash.exe");
 
             /// <summary>Stores output of the previous command if redirected.</summary>
             public string Output { get; private set; }
@@ -122,12 +122,12 @@ namespace Netnr.Core
 
             static Bash()
             {
-                _linux = System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(System.Runtime.InteropServices.OSPlatform.Linux);
-                _mac = System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(System.Runtime.InteropServices.OSPlatform.OSX);
-                _windows = System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(System.Runtime.InteropServices.OSPlatform.Windows);
+                Plinux = System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(System.Runtime.InteropServices.OSPlatform.Linux);
+                Pmac = System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(System.Runtime.InteropServices.OSPlatform.OSX);
+                Pwindows = System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(System.Runtime.InteropServices.OSPlatform.Windows);
 
-                Native = _linux || _mac ? true : false;
-                _bashPath = Native ? "bash" : "bash.exe";
+                Native = Plinux || Pmac ? true : false;
+                PbashPath = Native ? "bash" : "bash.exe";
             }
 
             /// <summary>Execute a new Bash command.</summary>
@@ -171,7 +171,7 @@ namespace Netnr.Core
             {
                 return new System.Diagnostics.ProcessStartInfo
                 {
-                    FileName = _bashPath,
+                    FileName = PbashPath,
                     Arguments = $"-c \"{input}\"",
                     RedirectStandardInput = false,
                     RedirectStandardOutput = redirectOutput,

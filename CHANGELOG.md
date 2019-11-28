@@ -1,4 +1,9 @@
 # 更新日志
+### [v1.2.1] - 2019-11-28 (未发布Nuget)
+- 调整 `Netnr.Fast` 类库下部分类提取为无命名空间类，放置 `PublicClass` 文件夹下
+- 更新 部分注释、语法版本
+- 更新 `Extend` 拓展类下 `ToTimestamp` 转时间戳的方法支持 10位 秒 和 13位 毫秒，默认 秒
+
 ### [v1.2.1] - 2019-10-11
 - 修复 `CmdTo.Shell` 方法
 - 添加 `Netnr.Fast.OSInfoTo` 类

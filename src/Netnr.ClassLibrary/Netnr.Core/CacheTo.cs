@@ -43,6 +43,7 @@ namespace Netnr.Core
         /// <summary>
         /// 移除指定数据缓存
         /// </summary>
+        /// <param name="CacheKey">键</param>
         public static void Remove(string CacheKey)
         {
             System.Web.Caching.Cache objCache = HttpRuntime.Cache;
@@ -104,6 +105,7 @@ namespace Netnr.Core
         /// <summary>
         /// 移除指定数据缓存
         /// </summary>
+        /// <param name="CacheKey">键</param>
         public static void Remove(string CacheKey) => memoryCache.Remove(CacheKey);
 
         /// <summary>
