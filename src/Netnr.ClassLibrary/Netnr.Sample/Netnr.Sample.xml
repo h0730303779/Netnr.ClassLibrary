@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Netnr.Sample</name>
+    </assembly>
+    <members>
+        <member name="T:Netnr.Sample.Controllers.CacheToController">
+            <summary>
+            缓存
+            </summary>
+        </member>
+        <member name="M:Netnr.Sample.Controllers.CacheToController.Sliding">
+            <summary>
+            缓存的相对过期
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Netnr.Sample.Controllers.CacheToController.Absolute">
+            <summary>
+            缓存的绝对过期
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Netnr.Sample.Controllers.GlobalToController">
+            <summary>
+            全局对象
+            </summary>
+        </member>
+        <member name="M:Netnr.Sample.Controllers.GlobalToController.Index">
+            <summary>
+            获取一些配置信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Netnr.Sample.Controllers.HomeController">
+            <summary>
+            主控制器
+            </summary>
+        </member>
+        <member name="M:Netnr.Sample.Controllers.HomeController.Index">
+            <summary>
+            首页
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Netnr.Sample.Controllers.HomeController.Error">
+            <summary>
+            报错
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Netnr.Sample.Controllers.ImageToController">
+            <summary>
+            图片操作
+            </summary>
+        </member>
+        <member name="M:Netnr.Sample.Controllers.ImageToController.CreateCode">
+            <summary>
+            创建验证码，并记录session
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Netnr.Sample.Controllers.ImageToController.ValidCode">
+            <summary>
+            根据session 校验验证码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Netnr.Sample.Controllers.OSInfoToController">
+            <summary>
+            缓存
+            </summary>
+        </member>
+        <member name="M:Netnr.Sample.Controllers.OSInfoToController.Index">
+            <summary>
+            获取系统信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Netnr.Sample.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            This method gets called by the runtime. Use this method to add services to the container.
+        </member>
+        <member name="M:Netnr.Sample.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.Extensions.Hosting.IHostEnvironment,Microsoft.Extensions.Caching.Memory.IMemoryCache)">
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        </member>
+    </members>
+</doc>

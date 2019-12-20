@@ -6,6 +6,7 @@
 ### 项目
 -  **Netnr.Core** 　公共核心的类库（直接使用）
 -  **Netnr.Fast** 　常用的的类库（根据自己的实际情况微调，如一些参数）
+-  **Netnr.Sample** 　示例项目（部分示例，调试等使用）
 
 ### 安装（NuGet）
 ```
@@ -27,16 +28,21 @@ Install-Package Netnr.Core
 - UniqueTo.cs　　生成唯一的标识（GUID转成long）
 
 ### Netnr.Fast
+- PublicClass　　公用类，无命名空间
+    - ActionResultVM.cs　　通用请求方法返回对象
+    - GlobalTo.cs　　Core环境`IConfiguration` `IHostEnvironment` 对象，`appsettings.json`配置文件
+    - PageVM.cs　　分页视图
+    - PaginationVM.cs　　分页参数
+    - QueryDataInputVM.cs　　输入参数
+    - QueryDataOutputVM.cs　　输出信息
 - ClientTo.cs　　获取客户端的一些信息（需要传入 `HttpContext`）
 - DownTo.cs　　流下载文件（需要传入 `HttpResponse`）
-- GlobalTo.cs　　Core环境`IConfiguration` `IHostEnvironment` 对象，`appsettings.json`配置文件
 - ImageTo.cs　　图片操作（生成验证码、缩略图、水印）
 - NpoiTo.cs　　操作Excel（依赖 `NPOI`，Excel文件与DataTable相互转换，支持 .xls、.xlsx，Framework项目需要引入`SharpZipLib`）
 - OSInfoTo.cs　　获取系统信息（依赖`Cmd`、`Shell`命令）
-- PaginationVM.cs　　分页参数实体，无命名空间
+- ParsingTo.cs　　解析（正则验证、数据处理）
 - PinyinTo.cs　　中文转拼音（NPinyin）
 - QueryableTo.cs　　IQueryable对象的拓展，如排序拼接
-- RegexTo.cs　　常用正则验证
 
 
 ### 框架

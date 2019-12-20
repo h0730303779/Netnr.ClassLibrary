@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Netnr.Core", "Netnr.Core\Ne
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Netnr.Fast", "Netnr.Fast\Netnr.Fast.csproj", "{4262C15B-CB77-4D65-8D7A-C915961029F3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Netnr.Test", "Netnr.Test\Netnr.Test.csproj", "{785127D1-18DB-4ED9-B33C-22AED8A49BB5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Netnr.Sample", "Netnr.Sample\Netnr.Sample.csproj", "{C255FB1A-23EA-42C3-98B7-3E628BF1C8B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{4262C15B-CB77-4D65-8D7A-C915961029F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4262C15B-CB77-4D65-8D7A-C915961029F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4262C15B-CB77-4D65-8D7A-C915961029F3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{785127D1-18DB-4ED9-B33C-22AED8A49BB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{785127D1-18DB-4ED9-B33C-22AED8A49BB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{785127D1-18DB-4ED9-B33C-22AED8A49BB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{785127D1-18DB-4ED9-B33C-22AED8A49BB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C255FB1A-23EA-42C3-98B7-3E628BF1C8B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C255FB1A-23EA-42C3-98B7-3E628BF1C8B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C255FB1A-23EA-42C3-98B7-3E628BF1C8B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C255FB1A-23EA-42C3-98B7-3E628BF1C8B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

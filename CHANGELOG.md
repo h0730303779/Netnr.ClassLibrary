@@ -1,4 +1,9 @@
 # 更新日志
+### [v1.2.1] - 2019-12-20 (未发布Nuget)
+- 调整 `CacheTo` 类 从引用 `Microsoft.Extensions.Caching.Memory` 改为 `Microsoft.Extensions.Caching.Abstractions`
+- 调整 删除 `Netnr.Test` 控制台项目，添加 `Netnr.Sample` 示例项目
+- 调整 `RegexTo` 类 改为 `ParsingTo`
+
 ### [v1.2.1] - 2019-11-28 (未发布Nuget)
 - 调整 `Netnr.Fast` 类库下部分类提取为无命名空间类，放置 `PublicClass` 文件夹下
 - 更新 部分注释、语法版本
