@@ -26,9 +26,29 @@ namespace Netnr.Core
         public static void Log(object msg)
         {
             string txt;
+
             try
             {
-                txt = msg.ToJson();
+                switch (msg.GetType().Name)
+                {
+                    case "Enum":
+                    case "Byte":
+                    case "Char":
+                    case "String":
+                    case "Boolean":
+                    case "UInt16":
+                    case "Int16":
+                    case "Int32":
+                    case "Int64":
+                    case "Single":
+                    case "Double":
+                    case "Decimal":
+                        txt = msg.ToString();
+                        break;
+                    default:
+                        txt = msg.ToJson();
+                        break;
+                }
             }
             catch (Exception)
             {

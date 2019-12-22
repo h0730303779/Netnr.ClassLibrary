@@ -1,10 +1,14 @@
 # 更新日志
-### [v1.2.1] - 2019-12-20 (未发布Nuget)
+
+### [v1.2.2] - 2019-12-22
+- 调整 `ConsoleTo` 类 添加类型判断，修复换行符被序列化为字符串
+
+### [v1.2.2] - 2019-12-20 (未发布Nuget)
 - 调整 `CacheTo` 类 从引用 `Microsoft.Extensions.Caching.Memory` 改为 `Microsoft.Extensions.Caching.Abstractions`
 - 调整 删除 `Netnr.Test` 控制台项目，添加 `Netnr.Sample` 示例项目
 - 调整 `RegexTo` 类 改为 `ParsingTo`
 
-### [v1.2.1] - 2019-11-28 (未发布Nuget)
+### [v1.2.2] - 2019-11-28 (未发布Nuget)
 - 调整 `Netnr.Fast` 类库下部分类提取为无命名空间类，放置 `PublicClass` 文件夹下
 - 更新 部分注释、语法版本
 - 更新 `Extend` 拓展类下 `ToTimestamp` 转时间戳的方法支持 10位 秒 和 13位 毫秒，默认 秒

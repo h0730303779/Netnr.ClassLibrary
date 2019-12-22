@@ -21,6 +21,17 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:Netnr.Sample.Controllers.ConsoleToController">
+            <summary>
+            输出日志
+            </summary>
+        </member>
+        <member name="M:Netnr.Sample.Controllers.ConsoleToController.Index">
+            <summary>
+            输出日志信息
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Netnr.Sample.Controllers.GlobalToController">
             <summary>
             全局对象

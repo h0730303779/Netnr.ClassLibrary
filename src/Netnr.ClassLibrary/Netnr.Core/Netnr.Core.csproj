@@ -10,13 +10,14 @@
     <RepositoryUrl>https://github.com/netnr/Netnr.ClassLibrary</RepositoryUrl>
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageTags>netnr</PackageTags>
-    <PackageReleaseNotes>- 修复 `CmdTo.Shell` 方法</PackageReleaseNotes>
+    <PackageReleaseNotes>- 调整 `ConsoleTo` 类 添加类型判断，修复换行符被序列化为字符串
+- 更新 `Extend` 拓展类下 `ToTimestamp` 转时间戳的方法支持 10位 秒 和 13位 毫秒，默认 秒</PackageReleaseNotes>
     <Authors>netnr</Authors>
-    <Version>1.2.1</Version>
+    <Version>1.2.2</Version>
     <DocumentationFile>Netnr.Core.xml</DocumentationFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <LangVersion>8.0</LangVersion>
-    <PackageIcon>favicon.ico</PackageIcon>
+    <PackageIcon>favicon.png</PackageIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net40|AnyCPU'">
@@ -43,10 +44,9 @@
     <None Update="Netnr.Core.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="favicon.ico">
+    <None Include="favicon.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 
